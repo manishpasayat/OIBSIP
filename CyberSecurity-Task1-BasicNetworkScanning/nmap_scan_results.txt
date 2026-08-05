@@ -1,79 +1,100 @@
-Port: 53
+NMAP SCAN RESULTS
 
-Service:
-Domain Name System (DNS)
+Target IP: 127.0.0.1 (localhost)
+Scanner: Nmap 7.99
+Operating System Detected: Microsoft Windows 11 (24H2–25H2)
 
-Purpose:
-DNS translates domain names such as www.google.com into IP addresses so computers can communicate over a network.
+============================================================
 
-Security Analysis:
-If DNS is not properly secured, attackers may exploit it for DNS spoofing, cache poisoning, or information gathering. In this scan, the port is shown as filtered, indicating that a firewall or security mechanism is restricting access.
-
-
-
-
-Port: 135 
-
-Service:
-Microsoft RPC 
+Port: 53/TCP
+State: Filtered
+Service: Domain (DNS)
 
 Purpose:
-Used by Windows for Remote Procedure Call communication between application and services.
+DNS (Domain Name System) translates domain names into IP addresses.
 
 Security Analysis:
-Because RPC is an important Windows service, attackers often target it . If exposed to untrusted networks , it may be abused to exploit system vulnerabilities. It should be accessible only on trusted networks.
+The port is in a filtered state, indicating that a firewall or another security mechanism is blocking or filtering traffic. Properly securing DNS helps prevent attacks such as DNS spoofing and cache poisoning.
 
+------------------------------------------------------------
 
-
-
-Port: 445
-
-Service:
-Microsoft-DS (SMB)
+Port: 135/TCP
+State: Open
+Service: Microsoft RPC
 
 Purpose:
-Used for Windows file and printer sharing.
+Microsoft Remote Procedure Call (RPC) allows Windows applications and services to communicate with each other.
 
 Security Analysis:
-This port has been targeted by malware such as WannaCry. If file sharing is unnecessary, the port should be disabled or protected using a firewall.
+This service is essential for Windows, but if exposed to untrusted networks it may become a target for attackers. Access should be restricted using firewall rules.
 
+------------------------------------------------------------
 
+Port: 445/TCP
+State: Open
+Service: Microsoft-DS (SMB)
 
+Purpose:
+Provides Windows file and printer sharing services using the Server Message Block (SMB) protocol.
 
-Port: 1042
+Security Analysis:
+Port 445 has historically been exploited by malware such as WannaCry. If file sharing is not required, it should be disabled or restricted to trusted networks.
 
-Service:
-Unknown/Custom Application
+------------------------------------------------------------
+
+Port: 1042/TCP
+State: Open
+Service: Unknown (reported as afrog?)
 
 Purpose:
 Nmap detected an active service but could not identify it with certainty.
 
 Security Analysis:
-Unknown services should always be investigated because administrators should know which applications are listening on every open port.
+Unknown services should be investigated by the administrator to determine which application is using the port and whether it is required.
 
+------------------------------------------------------------
 
-
-
-Port: 1043
-
-Service:
-Unknown SSL Service
+Port: 1043/TCP
+State: Open
+Service: SSL/BOINC
 
 Purpose:
-Appears to be an SSL-enabled custom application.
+An SSL-enabled service detected by Nmap.
 
 Security Analysis:
-Any custom service should be monitored regularly, updated, and restricted to trusted users to reduce security risks.
+Only authorized users should have access to this service. Regular updates and firewall protection are recommended.
 
+------------------------------------------------------------
 
-
-Port: 7778
-
-Service:
-Interwise
+Port: 7778/TCP
+State: Open
+Service: Interwise
 
 Purpose:
 Associated with collaboration or communication software.
 
 Security Analysis:
-Unused services should be disabled. If the service is required, it should be updated regularly and protected using firewall rules.
+If this service is not required, it should be disabled. Otherwise, keep the software updated and restrict access where possible.
+
+============================================================
+
+Summary
+
+Host Status:
+Host is up.
+
+Open Ports:
+135/TCP – Microsoft RPC
+445/TCP – Microsoft-DS (SMB)
+1042/TCP – Unknown (afrog?)
+1043/TCP – SSL/BOINC
+7778/TCP – Interwise
+
+Filtered Port:
+53/TCP – DNS
+
+OS Detection:
+Microsoft Windows 11 (24H2–25H2)
+
+Conclusion:
+The scan successfully identified one filtered port and five open ports on the local Windows 11 system. The detected services appear to be associated with Windows system functions and locally running applications. Unnecessary services should be disabled, systems should be kept updated, and firewall rules should be used to minimize the attack surface.
