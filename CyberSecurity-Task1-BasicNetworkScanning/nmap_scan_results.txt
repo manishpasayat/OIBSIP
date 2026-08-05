@@ -1,0 +1,79 @@
+Port: 53
+
+Service:
+Domain Name System (DNS)
+
+Purpose:
+DNS translates domain names such as www.google.com into IP addresses so computers can communicate over a network.
+
+Security Analysis:
+If DNS is not properly secured, attackers may exploit it for DNS spoofing, cache poisoning, or information gathering. In this scan, the port is shown as filtered, indicating that a firewall or security mechanism is restricting access.
+
+
+
+
+Port: 135 
+
+Service:
+Microsoft RPC 
+
+Purpose:
+Used by Windows for Remote Procedure Call communication between application and services.
+
+Security Analysis:
+Because RPC is an important Windows service, attackers often target it . If exposed to untrusted networks , it may be abused to exploit system vulnerabilities. It should be accessible only on trusted networks.
+
+
+
+
+Port: 445
+
+Service:
+Microsoft-DS (SMB)
+
+Purpose:
+Used for Windows file and printer sharing.
+
+Security Analysis:
+This port has been targeted by malware such as WannaCry. If file sharing is unnecessary, the port should be disabled or protected using a firewall.
+
+
+
+
+Port: 1042
+
+Service:
+Unknown/Custom Application
+
+Purpose:
+Nmap detected an active service but could not identify it with certainty.
+
+Security Analysis:
+Unknown services should always be investigated because administrators should know which applications are listening on every open port.
+
+
+
+
+Port: 1043
+
+Service:
+Unknown SSL Service
+
+Purpose:
+Appears to be an SSL-enabled custom application.
+
+Security Analysis:
+Any custom service should be monitored regularly, updated, and restricted to trusted users to reduce security risks.
+
+
+
+Port: 7778
+
+Service:
+Interwise
+
+Purpose:
+Associated with collaboration or communication software.
+
+Security Analysis:
+Unused services should be disabled. If the service is required, it should be updated regularly and protected using firewall rules.

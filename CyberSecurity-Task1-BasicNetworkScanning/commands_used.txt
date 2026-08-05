@@ -1,0 +1,55 @@
+Basic Scan
+Command:
+nmap 127.0.0.1
+
+Purpose:
+Discover open ports on the target.
+
+
+
+Service Version Detection
+
+Command:
+nmap -sV 127.0.0.1
+
+Purpose:
+Identify versions of running services.
+
+
+
+Operating System Detection
+
+Command:
+nmap -O 127.0.0.1
+
+Purpose:
+Identify the operating system.
+
+
+Aggressive Scan
+
+Command:
+nmap -A 127.0.0.1
+
+Purpose:
+Perform OS detection, version detection, NSE scripts and traceroute.
+
+
+
+Specific Port Scan
+
+Command:
+nmap -p 445 127.0.0.1
+
+Purpose:
+Scan only port 445.
+
+
+
+Skip Host Discovery
+
+Command:
+nmap -Pn 127.0.0.1
+
+Purpose:
+Assume the host is online and skip the ping discovery phase.
