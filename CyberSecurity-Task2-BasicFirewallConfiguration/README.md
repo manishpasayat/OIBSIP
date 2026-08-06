@@ -91,7 +91,7 @@ The output confirmed that all configured rules were successfully applied.
 
 ## Ethical Use
 
-Firewall configurations should only be applied on systems that you own or have permission to administer.
+Firewall configurations should only be applied on systems that you own or have permission to administer . 
 
 ---
 
