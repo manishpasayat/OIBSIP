@@ -78,6 +78,38 @@ Attempts to identify the operating system of the target machine.
 
 ---
 
+### Aggressive Scan
+
+```bash
+nmap -A 127.0.0.1
+```
+Purspose:
+Enables comprehensive scanning options in a single command , including OS detection (`-O`) , service version detection (`-sV`) , default script scanning (`-sC`) , and traceroute.
+
+---
+
+### No-Ping Scan(Skip host discovery)
+
+```bash
+nmap -Pn 127.0.0.1
+```
+
+Purpose:
+Treats all target hosts as online and completely skips the initial host discovery (ping) phase . This allows you to scan targets protected by firewalls that block ICMP ping requests.
+
+---
+
+### Port Scan
+
+```bash
+nmap -p 443 127.0.0.1
+```
+
+Purpose:
+Scans Specific target ports or port ranges to scan instead of the default top 1000 ports .
+
+---
+
 ## Findings
 
 The scan identified several open ports running different services. Each discovered service was analyzed to understand its purpose and possible security implications. Detailed results are available in **nmap_scan_results.txt**.
