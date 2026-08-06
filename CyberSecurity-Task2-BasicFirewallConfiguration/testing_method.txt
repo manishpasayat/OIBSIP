@@ -1,0 +1,15 @@
+Firewall Testing Method
+
+1. Enabled the UFW firewall.
+
+2. Configured a rule to deny incoming HTTP traffic (Port 80).
+
+3. Verified the firewall configuration using:
+
+   sudo ufw status verbose
+
+4. The output shows:
+
+   80/tcp DENY IN Anywhere
+
+5. This confirms that incoming HTTP traffic is blocked according to the configured firewall rule.
