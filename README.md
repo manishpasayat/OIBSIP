@@ -194,9 +194,9 @@ Each completed task is maintained in its own directory with relevant documentati
 
 ```text
 OIBSIP/
-- CyberSecurity-Task1-...
-- CyberSecurity-Task2-...
-- CyberSecurity-Task3-...
+- CyberSecurity-Task1-BasicNetworkScanning
+- CyberSecurity-Task2-BasicFirewallConfiguration
+- CyberSecurity-Task3-SQLInjection-DVWA
 - CyberSecurity-Task7-VulnerabilityScanning-Nikto/
 - CyberSecurity-Task8-Wireshark-NetworkTraffic/
 ```
